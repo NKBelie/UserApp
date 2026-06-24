@@ -14,11 +14,11 @@ function AddUser() {
     };
 
     return (
-    <div>
-        <h2>Add User</h2>
+    <section className="space-y-6">
+        <h2 className="text-3xl font-bold text-slate-900">Add User</h2>
         <UserForm addUser={addUser} />
         <UserList users={users} />
-    </div>
+    </section>
     );
 }
 

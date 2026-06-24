@@ -19,6 +19,9 @@ function Navbar() {
                     <NavLink to="/" className={navLinkClass}>
                         Home
                     </NavLink>
+                    <NavLink to="/add-user" className={navLinkClass}>
+                        Add User
+                    </NavLink>
                     <NavLink to="/fetch-users" className={navLinkClass}>
                         Fetch Users
                     </NavLink>

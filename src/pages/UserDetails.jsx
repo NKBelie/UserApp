@@ -32,19 +32,21 @@ function UserDetails() {
 
 
     if (isLoading)
-    return <h2>Loading...</h2>;
+    return <h2 className="text-2xl font-semibold text-slate-700">Loading...</h2>;
 
 
     if (error)
-    return <h2>Error</h2>;
+    return <h2 className="text-2xl font-semibold text-red-600">Error</h2>;
 
     return (
-    <div>
-        <h2>{data.name}</h2>
-        <p>Email: {data.email}</p>
-        <p>Phone: {data.phone}</p>
-        <p>Website: {data.website}</p>
-    </div>
+    <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-3xl font-bold text-slate-900">{data.name}</h2>
+        <div className="mt-4 space-y-2 text-slate-700">
+            <p>Email: {data.email}</p>
+            <p>Phone: {data.phone}</p>
+            <p>Website: {data.website}</p>
+        </div>
+    </section>
     );
 }
 
