@@ -1,15 +1,26 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 
 function UserCard({ user }) {
+    const initials = user.name
+        .split(" ")
+        .map((part) => part[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase();
+
     return (
-    <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-        <h3 className="text-lg font-semibold text-slate-900">{user.name}</h3>
-        <p className="mt-1 text-sm text-slate-600">{user.email}</p>
+    <article className="user-card">
+        <div className="user-card-header">
+            <span className="user-avatar">{initials}</span>
+            <div>
+                <h3>{user.name}</h3>
+                <p>{user.email}</p>
+            </div>
+        </div>
         <Link
         to={`/users/${user.id}`}
-        className="mt-4 inline-block rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+        className="button-secondary"
         >
         View Details
         </Link>

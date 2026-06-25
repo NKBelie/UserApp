@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import UserForm from "../components/UserForm";
 import UserList from "../components/UserList";
@@ -14,8 +13,14 @@ function AddUser() {
     };
 
     return (
-    <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-slate-900">Add User</h2>
+    <section className="page-stack">
+        <div className="page-heading">
+            <span className="eyebrow">Local users</span>
+            <h1 className="page-title">Add User</h1>
+            <p className="page-subtitle">
+                Save a name and email in the current session.
+            </p>
+        </div>
         <UserForm addUser={addUser} />
         <UserList users={users} />
     </section>

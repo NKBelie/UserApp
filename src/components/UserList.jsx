@@ -1,9 +1,15 @@
-import React from "react";
 import UserCard from "../pages/UserCard";
 
 function UserList({ users }) {
+    if (!users.length) {
+        return (
+            <div className="empty-state">
+                <p>No users to show yet.</p>
+            </div>
+        );
+    }
     return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="user-grid">
         {users.map((user) => (
         <UserCard
             key={user.id}

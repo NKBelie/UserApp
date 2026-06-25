@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import UserList from "../components/UserList";
@@ -26,18 +25,48 @@ function ReactQueryUsers() {
 
 
     if (isLoading)
-    return <h2 className="text-2xl font-semibold text-slate-700">Loading...</h2>;
+    return (
+    <section className="page-stack">
+        <div className="page-heading">
+            <span className="eyebrow">React Query</span>
+            <h1 className="page-title">Users</h1>
+            <p className="page-subtitle">Profiles loaded with cached query state.</p>
+        </div>
+        <div className="status-panel">
+            <p>
+                <strong>Loading users</strong>
+                Preparing the cached profile list.
+            </p>
+        </div>
+    </section>
+    );
 
 
     if (error)
-    return <h2 className="text-2xl font-semibold text-red-600">Error fetching users</h2>;
+    return (
+    <section className="page-stack">
+        <div className="page-heading">
+            <span className="eyebrow">React Query</span>
+            <h1 className="page-title">Users</h1>
+            <p className="page-subtitle">Profiles loaded with cached query state.</p>
+        </div>
+        <div className="status-panel status-panel-error">
+            <p>
+                <strong>Unable to load users</strong>
+                Please try again in a moment.
+            </p>
+        </div>
+    </section>
+    );
 
 
     return (
-    <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-slate-900">
-        Users using TanStack React Query
-        </h2>
+    <section className="page-stack">
+        <div className="page-heading">
+            <span className="eyebrow">React Query</span>
+            <h1 className="page-title">Users</h1>
+            <p className="page-subtitle">Profiles loaded with cached query state.</p>
+        </div>
 
 
         <UserList users={users} />

@@ -1,4 +1,3 @@
-import React from "react"
 import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Home from "./pages/Home"
@@ -11,9 +10,9 @@ import UserDetails from "./pages/UserDetails"
 function App() {
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900">
+    <div className="app-shell">
       <Navbar />
-      <main className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/add-user" element={<AddUser />} />
